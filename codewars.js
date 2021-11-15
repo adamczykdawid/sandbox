@@ -1,19 +1,25 @@
 //////////codewars task
 function duplicateCount(text) {
   let count = 0;
+  let currentCount = 0;
   for (let i = 0; i < text.length; i++) {
     for (let j = 0; j < text.length; j++) {
       if (text[i].toLowerCase() == text[j].toLowerCase()) {
-        count++;
+        currentCount++;
       }
     }
-    if (count > 1) {
-      console.log(`letter ${text[i].toLowerCase()} occurs ${count} times`);
-    } else {
+    if (currentCount > 1) {
+      count++;
     }
-    count = 0;
+    currentCount = 0;
     i++;
   }
+  return count;
 }
 
-duplicateCount("ABBA");
+console.log(duplicateCount("abcde")); //1
+console.log(duplicateCount("")); //undefined
+console.log(duplicateCount("aabbcde")); //2
+console.log(duplicateCount("aabBcde")); //2
+console.log(duplicateCount("Indivisibility")); //6
+console.log(duplicateCount("Indivisibilities")); //7
