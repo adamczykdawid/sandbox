@@ -384,7 +384,7 @@ GOOD LUCK 😀
 
 /*
 const mark = {
-  fullName: 'Mark Miller',
+  fullName: 'Mark Miller', 
   mass: 78,
   height: 1.69,
   calcBMI: function () {
