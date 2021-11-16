@@ -16,32 +16,32 @@
 //   }
 //   return count;
 // }
-function duplicateCount(text) {
-  let count = 0;
-  let textArr = text.toLowerCase().split("");
-  let alreadyFound = [];
+// function duplicateCount(text) {
+//   let count = 0;
+//   let textArr = text.toLowerCase().split("");
+//   let alreadyFound = [];
 
-  for (let i = 0; i < textArr.length; i++) {
-    let sliced = textArr.slice(0, i);
+//   for (let i = 0; i < textArr.length; i++) {
+//     let sliced = textArr.slice(0, i);
 
-    if (alreadyFound.includes(textArr[i])) {
-      i++;
-    } else if (sliced.includes(textArr[i])) {
-      alreadyFound.push(textArr[i]);
-      count++;
-    }
-  }
-  console.log(count);
-  return count;
-}
+//     if (alreadyFound.includes(textArr[i])) {
+//       i++;
+//     } else if (sliced.includes(textArr[i])) {
+//       alreadyFound.push(textArr[i]);
+//       count++;
+//     }
+//   }
+//   console.log(count);
+//   return count;
+// }
 
-console.log(duplicateCount("abcde")); //1
-console.log(duplicateCount("")); //undefined
-console.log(duplicateCount("aabbcde")); //2
-console.log(duplicateCount("aabBcde")); //2
-console.log(duplicateCount("Indivisibility")); //6
-console.log(duplicateCount("Indivisibilities")); //7
-console.log(duplicateCount("abcdefABCABa")); //7
+// console.log(duplicateCount("abcde")); //1
+// console.log(duplicateCount("")); //undefined
+// console.log(duplicateCount("aabbcde")); //2
+// console.log(duplicateCount("aabBcde")); //2
+// console.log(duplicateCount("Indivisibility")); //6
+// console.log(duplicateCount("Indivisibilities")); //7
+// console.log(duplicateCount("abcdefABCABa")); //7
 
 // function duplicateCount(text) {
 //   let miniArr = text.toLowerCase().split("");
@@ -70,3 +70,25 @@ console.log(duplicateCount("abcdefABCABa")); //7
 // duplicateCount("Indivisibility"); //1
 // duplicateCount("Indivisibilities"); //2
 // duplicateCount("abcdefABCABa");
+//codewars 2nd KATA
+function longest(s1, s2) {
+  let sorted = "";
+  let textArr = s1 + s2;
+  textArr.split("");
+  let alreadySaved = "";
+  for (let i = 0; i < textArr.length; i++) {
+    if (alreadySaved.includes(textArr[i])) {
+      continue;
+    } else {
+      sorted += textArr[i];
+      alreadySaved += textArr[i];
+    }
+  }
+  console.log(alreadySaved);
+  console.log(sorted);
+  return sorted;
+}
+
+console.log(longest("aretheyhere", "yestheyarehere"));
+console.log(longest("loopingisfunbutdangerous", "lessdangerousthancoding"));
+console.log(longest("inmanylanguages", "theresapairoffunctions"));
