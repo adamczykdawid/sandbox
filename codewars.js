@@ -75,17 +75,16 @@ function longest(s1, s2) {
   let sorted = "";
   let textArr = s1 + s2;
   textArr.split("");
-  let alreadySaved = "";
+  let alreadySaved = [];
   for (let i = 0; i < textArr.length; i++) {
     if (alreadySaved.includes(textArr[i])) {
       continue;
     } else {
-      sorted += textArr[i];
-      alreadySaved += textArr[i];
+      alreadySaved.push(textArr[i]);
     }
   }
-  console.log(alreadySaved);
-  console.log(sorted);
+
+  sorted = alreadySaved.sort().join("");
   return sorted;
 }
 
