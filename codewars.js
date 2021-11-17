@@ -93,16 +93,16 @@
 // console.log(longest("inmanylanguages", "theresapairoffunctions"));
 function accum(s) {
   let finalString = "";
-  // let testString = s.toLowerCase();
+  let testString = s.toLowerCase();
 
-  for (let i = 0; i < s.length; i++) {
+  for (let i = 0; i < testString.length; i++) {
     if (i === 0) {
-      finalString += s[i].toUpperCase();
+      finalString += testString[i].toUpperCase();
       finalString += "-";
-    } else if (i === s.length - 1) {
-      finalString += s[i].toUpperCase() + s[i].repeat(i);
+    } else if (i === testString.length - 1) {
+      finalString += testString[i].toUpperCase() + testString[i].repeat(i);
     } else if (i !== 0) {
-      finalString += s[i].toUpperCase() + s[i].repeat(i);
+      finalString += testString[i].toUpperCase() + testString[i].repeat(i);
       finalString += "-";
     }
   }
@@ -110,4 +110,4 @@ function accum(s) {
   return finalString;
 }
 
-console.log(accum("abc"));
+console.log(accum("ZpglnRxqenU"));
