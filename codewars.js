@@ -93,6 +93,21 @@
 // console.log(longest("inmanylanguages", "theresapairoffunctions"));
 function accum(s) {
   let finalString = "";
+  // let testString = s.toLowerCase();
+
+  for (let i = 0; i < s.length; i++) {
+    if (i === 0) {
+      finalString += s[i].toUpperCase();
+      finalString += "-";
+    } else if (i === s.length - 1) {
+      finalString += s[i].toUpperCase() + s[i].repeat(i);
+    } else if (i !== 0) {
+      finalString += s[i].toUpperCase() + s[i].repeat(i);
+      finalString += "-";
+    }
+  }
 
   return finalString;
 }
+
+console.log(accum("abc"));
