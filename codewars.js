@@ -136,6 +136,8 @@
 function isPrime(num) {
   if (num <= 0) {
     return false;
+  } else if (num === 1 || num === 4) {
+    return false;
   } else if (num > 0 && num / num === 1 && num % 2 !== 0) {
     return true;
   } else {
@@ -143,4 +145,4 @@ function isPrime(num) {
   }
 }
 
-console.log(isPrime(-1));
+console.log(isPrime(4));
