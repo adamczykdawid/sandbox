@@ -91,23 +91,45 @@
 // console.log(longest("aretheyhere", "yestheyarehere"));
 // console.log(longest("loopingisfunbutdangerous", "lessdangerousthancoding"));
 // console.log(longest("inmanylanguages", "theresapairoffunctions"));
-function accum(s) {
-  let finalString = "";
-  let testString = s.toLowerCase();
+// function accum(s) {
+//   let finalString = "";
+//   let testString = s.toLowerCase();
 
-  for (let i = 0; i < testString.length; i++) {
-    if (i === 0) {
-      finalString += testString[i].toUpperCase();
-      finalString += "-";
-    } else if (i === testString.length - 1) {
-      finalString += testString[i].toUpperCase() + testString[i].repeat(i);
-    } else if (i !== 0) {
-      finalString += testString[i].toUpperCase() + testString[i].repeat(i);
-      finalString += "-";
-    }
+//   for (let i = 0; i < testString.length; i++) {
+//     if (i === 0) {
+//       finalString += testString[i].toUpperCase();
+//       finalString += "-";
+//     } else if (i === testString.length - 1) {
+//       finalString += testString[i].toUpperCase() + testString[i].repeat(i);
+//     } else if (i !== 0) {
+//       finalString += testString[i].toUpperCase() + testString[i].repeat(i);
+//       finalString += "-";
+//     }
+//   }
+
+//   return finalString;
+// }
+
+// console.log(accum("ZpglnRxqenU"));
+function likes(names) {
+  let whoLikesIt = [];
+
+  if (names.length === 0) {
+    return "no one likes this";
+  } else if (names.length === 1) {
+    return `${names[0]} likes this`;
+  } else if (names.length === 2) {
+    return `${names[0]} and ${names[1]} like this`;
+  } else if (names.length === 3) {
+    return `${names[0]}, ${names[1]} and ${names[2]} like this`;
+  } else if (names.length > 3) {
+    return `${names[0]}, ${names[1]} and ${names.length - 2} others like this`;
   }
-
-  return finalString;
 }
 
-console.log(accum("ZpglnRxqenU"));
+console.log(likes([]));
+console.log(likes(["Peter"]));
+console.log(likes(["Jacob", "Alex"]));
+console.log(likes(["Max", "John", "Mark"]));
+console.log(likes(["Alex", "Jacob", "Mark", "Max"]));
+console.log(likes(["Alex", "Jacob", "Mark", "Max", "Dawid"]));
