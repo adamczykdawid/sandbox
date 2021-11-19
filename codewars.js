@@ -134,15 +134,21 @@
 // console.log(likes(["Alex", "Jacob", "Mark", "Max"]));
 // console.log(likes(["Alex", "Jacob", "Mark", "Max", "Dawid"]));
 function isPrime(num) {
-  if (num <= 0) {
-    return false;
-  } else if (num === 1 || num === 4 || num === 2 || num === 9) {
-    return false;
-  } else if (num > 0 && num / num === 1 && num % 2 !== 0) {
+  if (num === 2) {
     return true;
+  } else if (num > 0) {
+    for (let i = 2; i < num; i++) {
+      if (num % i !== 0) {
+        return true;
+      } else if (num === i * i) {
+        return false;
+      } else {
+        return false;
+      }
+    }
   } else {
     return false;
   }
 }
 
-console.log(isPrime(16));
+console.log(isPrime(45));
