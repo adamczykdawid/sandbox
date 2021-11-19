@@ -136,13 +136,13 @@
 function isPrime(num) {
   if (num <= 0) {
     return false;
-  } else if (num === 1 || num === 4) {
+  } else if (num === 1 || num === 4 || num === 2 || num === 9) {
     return false;
   } else if (num > 0 && num / num === 1 && num % 2 !== 0) {
     return true;
   } else {
-    return console.log("anything");
+    return false;
   }
 }
 
-console.log(isPrime(4));
+console.log(isPrime(16));
