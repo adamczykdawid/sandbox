@@ -144,18 +144,16 @@
 
 // console.log(isPrime(5099));
 let beeramid = function (bonus, price) {
+  let i = 0;
   let totalCheck = 0;
-  let i = 1;
-  while (totalCheck < bonus) {
+  while (totalCheck <= bonus) {
     totalCheck += i * i * price;
-    if (totalCheck < bonus) {
-      i++;
-    } else {
-      break;
-    }
+    i++;
   }
-  return console.log(i - 1);
+  if (i - 2 <= 0) {
+    return 0;
+  }
+  return i - 2;
 };
 
-beeramid(1500, 2);
-beeramid(5000, 3);
+beeramid(-1, 4);
