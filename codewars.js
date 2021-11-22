@@ -133,13 +133,29 @@
 // console.log(likes(["Max", "John", "Mark"]));
 // console.log(likes(["Alex", "Jacob", "Mark", "Max"]));
 // console.log(likes(["Alex", "Jacob", "Mark", "Max", "Dawid"]));
-function isPrime(num) {
-  for (let i = 2; i < num; i++) {
-    if (num % i === 0) {
-      return false;
+// function isPrime(num) {
+//   for (let i = 2; i < num; i++) {
+//     if (num % i === 0) {
+//       return false;
+//     }
+//   }
+//   return num > 1;
+// }
+
+// console.log(isPrime(5099));
+let beeramid = function (bonus, price) {
+  let totalCheck = 0;
+  let i = 1;
+  while (totalCheck < bonus) {
+    totalCheck += i * i * price;
+    if (totalCheck < bonus) {
+      i++;
+    } else {
+      break;
     }
   }
-  return num > 1;
-}
+  return console.log(i - 1);
+};
 
-console.log(isPrime(5099));
+beeramid(1500, 2);
+beeramid(5000, 3);
