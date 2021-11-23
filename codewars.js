@@ -143,17 +143,65 @@
 // }
 
 // console.log(isPrime(5099));
-let beeramid = function (bonus, price) {
-  let i = 0;
-  let totalCheck = 0;
-  while (totalCheck <= bonus) {
-    totalCheck += i * i * price;
-    i++;
-  }
-  if (i - 2 <= 0) {
-    return 0;
-  }
-  return i - 2;
-};
+// let beeramid = function (bonus, price) {
+//   let i = 0;
+//   let totalCheck = 0;
+//   while (totalCheck <= bonus) {
+//     totalCheck += i * i * price;
+//     i++;
+//   }
+//   if (i - 2 <= 0) {
+//     return 0;
+//   }
+//   return console.log(i - 2);
+// };
 
-beeramid(-1, 4);
+// beeramid(5000, 3  );
+//Colt assignments
+// function isValidPassword(password, username) {
+//   if (
+//     password.length < 8 ||
+//     password.includes(" ") ||
+//     password.includes(username)
+//   ) {
+//     return false;
+//   } else {
+//     return true;
+//   }
+// }
+
+// console.log(isValidPassword("89Fjjlnms", "dogLuvr"));
+// console.log(isValidPassword("dogLuvr123!", "dogLuvr"));
+// console.log(isValidPassword("hello1", "dogLuvr"));
+// console.log(isValidPassword("h osiemchaarkdk", "dogLuvr"));
+// function avg(arr) {
+//   let sum = 0;
+//   for (let e of arr) {
+//     sum += e;
+//   }
+//   sum /= arr.length;
+//   return sum;
+// }
+
+// console.log(avg([0, 50]));
+// console.log(avg([75, 76, 80, 95, 100]));
+// function isPangram(sentence) {
+//   let lowerCased = sentence.toLowerCase();
+//   for (let char of "abcdefghijklmnoprstuwxyz") {
+//     if (lowerCased.indexOf(char) === -1) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// console.log(isPangram("The five boxing wizards jump quickly"));
+// function getCard(value, suit) {
+//   const randomPlayingCard = {
+//     value: value,
+//     suit: suit,
+//   };
+//   return console.log(randomPlayingCard.value, randomPlayingCard.suit);
+// }
+
+// console.log(getCard("Q", "hearts"));
