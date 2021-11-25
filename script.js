@@ -587,3 +587,70 @@ console.log(calcAverage([2, 3, 7]));
 console.log(calcAverage(totals));
 console.log(calcAverage(tips));
 */
+//COLt LECTURES:
+//pick one function function
+
+// function cry() {
+//   console.log("boo hoo");
+// }
+// function laugh() {
+//   console.log("hahaha");
+// }
+
+// function pickOne(f1, f2) {
+//   let rand = Math.random();
+//   console.log(rand);
+//   if (rand > 0.5) {
+//     f1();
+//   } else {
+//     f2();
+//   }
+// }
+// function multiplyBy(num) {
+//   return function (x) {
+//     return x * num;
+//   };
+// }
+
+// const double = multiplyBy(2);
+// const triple = multiplyBy(3);
+// const halve = multiplyBy(0.5);
+// function makeBetweenFunc(x, y) {
+//   return function (num) {
+//     return num >= x && num <= y;
+//   };
+// }
+// const isChild = makeBetweenFunc(7, 14);
+// function byeFunc() {
+//   alert("Baiiiiii");
+// }
+// setTimeout(byeFunc, 5000);
+// function motivateMe() {
+//   alert("We are getting stronger in JS, man!");
+// }
+
+// // const btn = document.querySelector("button");
+// // btn.addEventListener("click", motivateMe);
+// const nums = [1, 2, 3, 4, 5];
+
+// nums.forEach(function (n) {
+//   console.log((n += 1));
+// });
+// const numbers = [20, 21, 23];
+// const words = ["mu", "lfc", "cfc", "mc"];
+// // const doubles = numbers.map(function (num) {
+// //   return num * 2;
+// // });
+// //OR WITH ARROW FUNCTION:
+// // const doubles2 = numbers.map((num) => {
+// //   return num * 2;
+// // });
+// //OR WITH ARROW FUNCTION AND IMPLICIT RETURN:
+// const doubles = numbers.map((num) => num * 2);
+
+// const abbrevs = words.map(function (w) {
+//   return w.toUpperCase().split("").join(".");
+// });
+const nums = [34, 35, 67, 54, 109, 102, 32, 9];
+
+const odds = nums.filter((n) => n % 2 === 1);
