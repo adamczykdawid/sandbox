@@ -656,68 +656,68 @@ console.log(calcAverage(tips));
 // // const odds = nums.filter((n) => n % 2 === 1);
 // const doubledNums = numbers.forEach((num) => console.log(num + num));
 ////////////BOOKS EXAMPLE - PRACTICE:
-const books = [
-  {
-    title: "Rozmyślania",
-    authors: "Marek Aureliusz",
-    rating: 4.85,
-    genres: "Filozofia",
-  },
-  {
-    title: "Dżentelmen w Moskwie",
-    authors: "Amor Towles",
-    rating: 4.16,
-    genres: "Powieść",
-  },
-  {
-    title: "The SLight Edge",
-    authors: "Jeff Olson",
-    rating: 4.57,
-    genres: ["Filozofia", "Biznes", "Rozwój"],
-  },
-  {
-    title: "Do Przerwy 0:1",
-    authors: "Adam Bahdaj",
-    rating: 3.98,
-    genres: "Powieść",
-  },
-  {
-    title: "Pismo Święte",
-    authors: "Autor zbiorowy",
-    rating: 5,
-    genres: "Religia",
-  },
-  {
-    title: "Władca Pierścieni - Saga",
-    authors: "J.R.R.Tolkien",
-    rating: 4.75,
-    genres: "Fantastyka",
-  },
-  {
-    title: "Harry Potter - Saga",
-    authors: "J.K.Rowling",
-    rating: 4.64,
-    genres: "Fantastyka",
-  },
-  {
-    title: "Lalka",
-    authors: "Bolesław Prus",
-    rating: 4.07,
-    genres: "Powieść",
-  },
-  {
-    title: "Trylogia",
-    authors: "Henryk Sienkiewicz",
-    rating: 4.27,
-    genres: ["Powieść", "Powieść Historyczna"],
-  },
-  {
-    title: "A truly horrible book",
-    authors: "Xavier Time",
-    rating: 2.06,
-    genres: ["Powieść"],
-  },
-];
+// const books = [
+//   {
+//     title: "Rozmyślania",
+//     authors: "Marek Aureliusz",
+//     rating: 4.85,
+//     genres: "Filozofia",
+//   },
+//   {
+//     title: "Dżentelmen w Moskwie",
+//     authors: "Amor Towles",
+//     rating: 4.16,
+//     genres: "Powieść",
+//   },
+//   {
+//     title: "The SLight Edge",
+//     authors: "Jeff Olson",
+//     rating: 4.57,
+//     genres: ["Filozofia", "Biznes", "Rozwój"],
+//   },
+//   {
+//     title: "Do Przerwy 0:1",
+//     authors: "Adam Bahdaj",
+//     rating: 3.98,
+//     genres: "Powieść",
+//   },
+//   {
+//     title: "Pismo Święte",
+//     authors: "Autor zbiorowy",
+//     rating: 5,
+//     genres: "Religia",
+//   },
+//   {
+//     title: "Władca Pierścieni - Saga",
+//     authors: "J.R.R.Tolkien",
+//     rating: 4.75,
+//     genres: "Fantastyka",
+//   },
+//   {
+//     title: "Harry Potter - Saga",
+//     authors: "J.K.Rowling",
+//     rating: 4.64,
+//     genres: "Fantastyka",
+//   },
+//   {
+//     title: "Lalka",
+//     authors: "Bolesław Prus",
+//     rating: 4.07,
+//     genres: "Powieść",
+//   },
+//   {
+//     title: "Trylogia",
+//     authors: "Henryk Sienkiewicz",
+//     rating: 4.27,
+//     genres: ["Powieść", "Powieść Historyczna"],
+//   },
+//   {
+//     title: "A truly horrible book",
+//     authors: "Xavier Time",
+//     rating: 2.06,
+//     genres: ["Powieść"],
+//   },
+// ];
 
 //forEach:
 // books.forEach(function (book) {
@@ -810,10 +810,66 @@ const books = [
 // };
 
 // console.log(testObj["name"]);
-const finalBooks = books.reduce((groupedBooks, book) => {
-  const key = Math.floor(book.rating);
-  if (!groupedBooks[key]) groupedBooks[key] = [];
-  groupedBooks[key].push(book);
-  return groupedBooks;
-}, {});
-console.log(finalBooks);
+// const finalBooks = books.reduce((groupedBooks, book) => {
+//   const key = Math.floor(book.rating);
+//   if (!groupedBooks[key]) groupedBooks[key] = [];
+//   groupedBooks[key].push(book);
+//   return groupedBooks;
+// }, {});
+// console.log(finalBooks);
+//destructuring array
+// const raceResults = [
+//   "Eliud Kipchoge",
+//   "Feyisa Lelisa",
+//   "Galen Rupp",
+//   "Ghirmay Ghebreslassie",
+//   "Alphonce Simbu",
+//   "Jared Ward",
+// ];
+
+// const [gold, silver, bronze] = raceResults;
+// // const [first, , fourth] = raceResults;
+// const [winner, ...rest] = raceResults;
+
+// console.log(gold, silver, bronze); //expected output: Eliud Kipchoge, Feyisa Lelisa, Galen Rupp
+////////////////////////////////////////////////////////
+//DESTRUCTURING OBJECTS
+// /////////////////////////////////////////////////////////
+// const runner = {
+//   first: "Eliud",
+//   last: "Kipchoge",
+//   country: "Kenya",
+//   title: "Elder of the ORder of the Golden Heart of Kenya",
+// };
+
+// // const { first, last } = runner;
+// // const { country: nation, title: honorific } = runner;
+// const { first, last, ...other } = runner;
+//nested destructuring
+// const runners = [
+//   {
+//     first: "Eliud",
+//     last: "Kipchoge",
+//     country: "Kenya",
+//   },
+//   {
+//     first: "Fayisa",
+//     last: "Lelisa",
+//     country: "Ethiopia",
+//   },
+//   {
+//     first: "Galen",
+//     last: "Rupp",
+//     country: "United States",
+//   },
+// ];
+
+// const [{ first: goldWinner }, { country }, { last }] = runners;
+// function print(person) {
+//   const { first, last, country } = person;
+//   console.log(`${first} ${last}, ${country}`);
+// }
+// //OR
+// function print({ first, last, country }) {
+//   console.log(`${first} ${last}, ${country}`);
+// }
