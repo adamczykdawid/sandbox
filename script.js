@@ -875,16 +875,30 @@ console.log(calcAverage(tips));
 // }
 /////////////////////
 //shorthand object
-function getStats(arr) {
-  const max = Math.max(...arr);
-  const min = Math.min(...arr);
-  const sum = arr.reduce((sum, currVal) => sum + currVal);
-  const avg = sum / arr.length;
-  return {
-    max,
-    min,
-    sum,
-    avg,
-  };
-}
-const nums = [1, 2, 3, 4, 5];
+// function getStats(arr) {
+//   const max = Math.max(...arr);
+//   const min = Math.min(...arr);
+//   const sum = arr.reduce((sum, currVal) => sum + currVal);
+//   const avg = sum / arr.length;
+//   return {
+//     max,
+//     min,
+//     sum,
+//     avg,
+//   };
+// }
+// const nums = [1, 2, 3, 4, 5];
+/////////////////this
+const person = {
+  first: "Cherilyn",
+  last: "Sarkisian",
+  nickName: "Cher",
+  fullName() {
+    const { first, last, nickName } = this;
+    return `${first} ${last} AKA ${nickName}`;
+  },
+  printBio() {
+    const fullName = this.fullName();
+    console.log(`${fullName} is a person!`);
+  },
+};
