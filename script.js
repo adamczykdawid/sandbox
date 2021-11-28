@@ -889,34 +889,96 @@ console.log(calcAverage(tips));
 // }
 // const nums = [1, 2, 3, 4, 5];
 /////////////////this
-const person = {
-  first: "Cherilyn",
-  last: "Sarkisian",
-  nickName: "Cher",
-  fullName() {
-    const { first, last, nickName } = this;
-    return `${first} ${last} AKA ${nickName}`;
-  },
-  printBio() {
-    const fullName = this.fullName();
-    console.log(`${fullName} is a person!`);
-  },
+// const person = {
+//   first: "Cherilyn",
+//   last: "Sarkisian",
+//   nickName: "Cher",
+//   fullName() {
+//     const { first, last, nickName } = this;
+//     return `${first} ${last} AKA ${nickName}`;
+//   },
+//   printBio() {
+//     const fullName = this.fullName();
+//     console.log(`${fullName} is a person!`);
+//   },
+// };
+// const annoyer = {
+//   phrases: ["cray cray", "literally", "totes"],
+//   pickPhrase() {
+//     const { phrases } = this;
+//     const idx = Math.floor(Math.random() * phrases.length);
+//     return phrases[idx];
+//   },
+//   start() {
+//     this.timerId = setInterval(() => {
+//       //arrow func becasue it does not get its own this, so we can use it here properly.
+//       console.log(this.pickPhrase());
+//     }, 3000);
+//   },
+//   stop() {
+//     clearInterval(this.timerId);
+//     console.log("STOP!");
+//   },
+// };
+/////////////////////wrapup and practice
+
+// //THe Fisher-Yates shuffle
+// function shuffle(arr){
+//   //loop over array backwards
+//   for(let i=arr.length-1;i>0;i--){
+//     //pick random index before current element
+//     let j = Math.floor(Math.random()*(i+1));
+//     //swap
+//     [arr[i],arr[j]] = [arr[j],arr[i]];
+
+//   }
+const makeDeck = () => {
+  return {
+    deck: [],
+    drawnCards: [],
+    suits: ["hearts", "diamonds", "spades", "clubs"],
+    values: "2,3,4,5,6,7,8,9,10,J,Q,K,A",
+    initializeDeck() {
+      const { deck, suits, values } = this;
+      for (let value of values.split(",")) {
+        for (let suit of suits) {
+          deck.push({ value, suit });
+        }
+      }
+      // return deck;
+    },
+    drawCard() {
+      const card = this.deck.pop();
+      this.drawnCards.push(card);
+      return card;
+    },
+    drawMultiple(numCards) {
+      const cards = [];
+      for (let i = 0; i < numCards; i++) {
+        cards.push(this.drawCard());
+      }
+      return cards;
+    },
+    //THe Fisher-Yates shuffle
+    shuffle() {
+      const { deck } = this;
+      //loop over array backwards
+      for (let i = deck.length - 1; i > 0; i--) {
+        //pick random index before current element
+        let j = Math.floor(Math.random() * (i + 1));
+        //swap
+        [deck[i], deck[j]] = [deck[j], deck[i]];
+      }
+    },
+  };
 };
-const annoyer = {
-  phrases: ["cray cray", "literally", "totes"],
-  pickPhrase() {
-    const { phrases } = this;
-    const idx = Math.floor(Math.random() * phrases.length);
-    return phrases[idx];
-  },
-  start() {
-    this.timerId = setInterval(() => {
-      //arrow func becasue it does not get its own this, so we can use it here properly.
-      console.log(this.pickPhrase());
-    }, 3000);
-  },
-  stop() {
-    clearInterval(this.timerId);
-    console.log("STOP!");
-  },
-};
+
+const myDeck = makeDeck();
+myDeck.initializeDeck();
+myDeck.shuffle();
+const h1 = myDeck.drawMultiple(2);
+const h2 = myDeck.drawMultiple(3);
+const h3 = myDeck.drawMultiple(4);
+
+const deck2 = makeDeck();
+deck2.initializeDeck();
