@@ -982,3 +982,124 @@ console.log(calcAverage(tips));
 
 // const deck2 = makeDeck();
 // deck2.initializeDeck();
+
+// console.log(isValidPassword("89Fjjlnms", "dogLuvr"));
+// console.log(isValidPassword("dogLuvr123!", "dogLuvr"));
+// console.log(isValidPassword("hello1", "dogLuvr"));
+// console.log(isValidPassword("h osiemchaarkdk", "dogLuvr"));
+// function avg(arr) {
+//   let sum = 0;
+//   for (let e of arr) {
+//     sum += e;
+//   }
+//   sum /= arr.length;
+//   return sum;
+// }
+
+// console.log(avg([0, 50]));
+// console.log(avg([75, 76, 80, 95, 100]));
+// function isPangram(sentence) {
+//   let lowerCased = sentence.toLowerCase();
+//   for (let char of "abcdefghijklmnoprstuwxyz") {
+//     if (lowerCased.indexOf(char) === -1) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// console.log(isPangram("The five boxing wizards jump quickly"));
+// function getCard(value, suit) {
+//   const randomPlayingCard = {
+//     value: value,
+//     suit: suit,
+//   };
+//   return console.log(randomPlayingCard.value, randomPlayingCard.suit);
+// }
+
+// console.log(getCard("Q", "hearts"));
+// function getCard() {
+//   const values = [
+//     "2",
+//     "3",
+//     "4",
+//     "5",
+//     "6",
+//     "7",
+//     "8",
+//     "9",
+//     "10",
+//     "J",
+//     "Q",
+//     "K",
+//     "A",
+//   ];
+//   const valIdx = Math.floor(Math.random() * values.length);
+//   const value = values[valIdx];
+
+//   const suits = ["clubs", "spades", "hearts", "diamonds"];
+//   const suitIdx = Math.floor(Math.random() * suits.length);
+//   const suit = suits[suitIdx];
+
+//   return { value: value, suit: suit };
+// }
+
+// function pick(arr) {
+//   // return random element from arr;
+//   const idx = Math.floor(Math.random() * arr.length);
+//   return arr[idx];
+// }
+
+// function getCard() {
+//   const values = [
+//     "2",
+//     "3",
+//     "4",
+//     "5",
+//     "6",
+//     "7",
+//     "8",
+//     "9",
+//     "10",
+//     "J",
+//     "Q",
+//     "K",
+//     "A",
+//   ];
+//   const suits = ["clubs", "spades", "hearts", "diamonds"];
+//   return { value: pick(values), suit: pick(suits) };
+// }
+//Colt assignments
+// function isValidPassword(password, username) {
+//   if (
+//     password.length < 8 ||
+//     password.includes(" ") ||
+//     password.includes(username)
+//   ) {
+//     return false;
+//   } else {
+//     return true;
+//   }
+// }
+// function likes(names) {
+//   let whoLikesIt = [];
+
+//   if (names.length === 0) {
+//     return "no one likes this";
+//   } else if (names.length === 1) {
+//     return `${names[0]} likes this`;
+//   } else if (names.length === 2) {
+//     return `${names[0]} and ${names[1]} like this`;
+//   } else if (names.length === 3) {
+//     return `${names[0]}, ${names[1]} and ${names[2]} like this`;
+//   } else if (names.length > 3) {
+//     return `${names[0]}, ${names[1]} and ${names.length - 2} others like this`;
+//   }
+// }
+
+// console.log(likes([]));
+// console.log(likes(["Peter"]));
+// console.log(likes(["Jacob", "Alex"]));
+// console.log(likes(["Max", "John", "Mark"]));
+// console.log(likes(["Alex", "Jacob", "Mark", "Max"]));
+// console.log(likes(["Alex", "Jacob", "Mark", "Max", "Dawid"]));
