@@ -17,19 +17,27 @@
 
 // for (let li of allLis) {
 //   li.innerHTML = "WE ARE <b>THE CHAMPIONS</b>!";
-// }
-const h1 = document.querySelector("h1");
+// // }
+// const h1 = document.querySelector("h1");
 
-const p = document.querySelector("p");
-p.style.backgroundColor = "teal";
-p.style.fontSize = "40px";
+// const p = document.querySelector("p");
+// p.style.backgroundColor = "teal";
+// p.style.fontSize = "40px";
 
-const allLis = document.querySelectorAll("li");
+// const allLis = document.querySelectorAll("li");
 
-const colors = ["red", ["orange"], ["yellow"], ["green"], ["purple"], ["blue"]];
+// const colors = ["red", ["orange"], ["yellow"], ["green"], ["purple"], ["blue"]];
 
-allLis.forEach((li, i) => {
-  const color = colors[i];
-  console.log(li, i);
-  li.style.color = color;
-});
+// allLis.forEach((li, i) => {
+//   const color = colors[i];
+//   console.log(li, i);
+//   li.style.color = color;
+// });
+
+///changing style all by one
+// const todo = document.querySelector("#todos .todo");
+
+// // todo.style.color = "gray";
+// // todo.style.textDecoration = "line-through";
+// // todo.style.opacity = "50%";
+// todo.classList.remove("done");
