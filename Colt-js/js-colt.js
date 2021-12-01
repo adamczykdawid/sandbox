@@ -44,23 +44,29 @@
 
 ///////////////////////creating elements
 
-const newh2 = document.createElement("h2");
-newh2.innerText = "I like animals!";
+// const newh2 = document.createElement("h2");
+// newh2.innerText = "I like animals!";
 
-newh2.classList.add("special");
-document.querySelector("section").appendChild(newh2);
+// newh2.classList.add("special");
+// document.querySelector("section").appendChild(newh2);
 
-const newIMG = document.createElement("img");
-newIMG.src =
-  "https://images.unsplash.com/photo-1504006833117-8886a355efbf?ixlib=rb-1.2.1.&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80";
+// const newIMG = document.createElement("img");
+// newIMG.src =
+//   "https://images.unsplash.com/photo-1504006833117-8886a355efbf?ixlib=rb-1.2.1.&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80";
 
-newIMG.style.width = "300px";
-document.body.appendChild(newIMG);
+// newIMG.style.width = "300px";
+// document.body.appendChild(newIMG);
 
-const newVid = document.createElement("a");
-newVid.innerText = "here you dum dum";
-newVid.href = "https://www.youtube.com/watch?v=QQNL83fhWJU";
-newVid.target = "_blank";
-const firstP = document.querySelector("p");
+// const newVid = document.createElement("a");
+// newVid.innerText = "here you dum dum";
+// newVid.href = "https://www.youtube.com/watch?v=QQNL83fhWJU";
+// newVid.target = "_blank";
+// const firstP = document.querySelector("p");
 
-firstP.appendChild(newVid);
+// firstP.appendChild(newVid);
+const newLi = document.createElement("li");
+newLi.innerText = "HEJKA! I'm a new LI";
+const firstLi = document.querySelector("li.todo");
+newLi.classList.add("todo");
+// firstLi.append(newLi);
+firstLi.insertAdjacentElement("beforebegin", newLi);
