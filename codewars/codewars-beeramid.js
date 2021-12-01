@@ -6,6 +6,7 @@ let beeramid = function (bonus, price) {
     i++;
   }
   if (i - 2 <= 0) {
+    //dddddddddddddddddddddddddddddd
     return 0;
   }
   return console.log(i - 2);
