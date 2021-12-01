@@ -8,13 +8,28 @@
 // console.log(document.querySelector("form").nextSibling);
 
 ///////////////////////changing alements
+// const allLis = document.querySelectorAll("li");
+
+// // for (let i = 0; i < allLis.length; i++) {
+// //   console.log(allLis[i].innerText);
+// //   allLis[i].innerText = "WE ARE THE CHAMPIONS!";
+// // }
+
+// for (let li of allLis) {
+//   li.innerHTML = "WE ARE <b>THE CHAMPIONS</b>!";
+// }
+const h1 = document.querySelector("h1");
+
+const p = document.querySelector("p");
+p.style.backgroundColor = "teal";
+p.style.fontSize = "40px";
+
 const allLis = document.querySelectorAll("li");
 
-// for (let i = 0; i < allLis.length; i++) {
-//   console.log(allLis[i].innerText);
-//   allLis[i].innerText = "WE ARE THE CHAMPIONS!";
-// }
+const colors = ["red", ["orange"], ["yellow"], ["green"], ["purple"], ["blue"]];
 
-for (let li of allLis) {
-  li.innerHTML = "WE ARE <b>THE CHAMPIONS</b>!";
-}
+allLis.forEach((li, i) => {
+  const color = colors[i];
+  console.log(li, i);
+  li.style.color = color;
+});
