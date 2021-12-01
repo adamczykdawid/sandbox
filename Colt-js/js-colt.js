@@ -57,16 +57,28 @@
 // newIMG.style.width = "300px";
 // document.body.appendChild(newIMG);
 
-// const newVid = document.createElement("a");
-// newVid.innerText = "here you dum dum";
-// newVid.href = "https://www.youtube.com/watch?v=QQNL83fhWJU";
-// newVid.target = "_blank";
-// const firstP = document.querySelector("p");
+//////////////////////////////////adding elements
+const newVid = document.createElement("a");
+newVid.innerText = "here you dum dum";
+newVid.href = "https://www.youtube.com/watch?v=QQNL83fhWJU";
+newVid.target = "_blank";
+const firstP = document.querySelector("p");
 
-// firstP.appendChild(newVid);
+firstP.appendChild(newVid);
 const newLi = document.createElement("li");
 newLi.innerText = "HEJKA! I'm a new LI";
 const firstLi = document.querySelector("li.todo");
 newLi.classList.add("todo");
 // firstLi.append(newLi);
 firstLi.insertAdjacentElement("beforebegin", newLi);
+
+///////////////////////////removing
+
+const parentEl = document.querySelector("section ul");
+const target = parentEl.querySelector(".special");
+
+// parentEl.removeChild(target);
+
+//or only remove() - you do not need to specify the parent and you simply pick the target.
+
+target.remove();
