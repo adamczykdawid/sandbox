@@ -109,23 +109,47 @@ const warriorsGames = [
 // }
 
 /////////////by Myself
-const parentUl = document.createElement("ul");
+const makeChart = (games, targetTeam) => {
+  const parentUl = document.createElement("ul");
 
-for (let game of warriorsGames) {
-  const { homeTeam, awayTeam } = game;
-  const teamNames = `${awayTeam.team} @ ${homeTeam.team}`;
-  const gameLi = document.createElement("li");
-  let scoreBoard;
-  if (awayTeam.points > homeTeam.points) {
-    scoreBoard = `<b>${awayTeam.points}</b>-${homeTeam.points}`;
-  } else {
-    scoreBoard = `${awayTeam.points}-<b>${homeTeam.points}</b>`;
+  for (let game of games) {
+    const { homeTeam, awayTeam } = game;
+
+    const gameLi = document.createElement("li");
+    gameLi.innerHTML = getScoreLine(game);
+
+    isWinner(game, targetTeam);
+
+    gameLi.classList.add(isWinner(game, targetTeam) ? "win" : "loss");
+
+    parentUl.appendChild(gameLi);
   }
-  const warriors = game.homeTeam.team === "Golden State" ? homeTeam : awayTeam;
-  gameLi.classList.add(warriors.isWinner ? "win" : "loss");
+  return parentUl;
+};
 
-  gameLi.innerHTML = `${teamNames} ${scoreBoard}`;
-  parentUl.appendChild(gameLi);
-}
+const isWinner = ({ homeTeam, awayTeam }, targetTeam) => {
+  const target = homeTeam.team === targetTeam ? homeTeam : awayTeam;
+  return target.isWinner;
+};
 
-document.body.appendChild(parentUl);
+const getScoreLine = ({ homeTeam, awayTeam }) => {
+  const { team: hTeam, points: hPoints } = homeTeam;
+  const { team: aTeam, points: aPoints } = awayTeam;
+  const teamNames = `${aTeam} @ ${hTeam}`;
+  let scoreBoard;
+  if (aPoints > hPoints) {
+    scoreBoard = `<b>${aPoints}</b>-${hPoints}`;
+  } else {
+    scoreBoard = `${aPoints}-<b>${hPoints}</b>`;
+  }
+  return `${teamNames} ${scoreBoard}`;
+};
+
+const gsSection = document.querySelector("#gsw");
+const hrSection = document.querySelector("#hr");
+
+const gsChart = makeChart(warriorsGames, "Golden State");
+
+const hrChart = makeChart(warriorsGames, "Houston");
+gsSection.appendChild(gsChart);
+hrSection.appendChild(hrChart);
