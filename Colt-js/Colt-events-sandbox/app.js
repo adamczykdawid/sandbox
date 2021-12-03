@@ -10,3 +10,21 @@ form.addEventListener("submit", function (e) {
   console.log("veggieSelect", veggieSelect.value);
   e.preventDefault();
 });
+
+const formData = {};
+for (let input of [creditCardInput, termsChechbox, veggieSelect]) {
+  input.addEventListener("input", ({ target }) => {
+    const { name, type, value, checked } = target;
+    formData[name] = type === "checkbox" ? checked : value;
+  });
+}
+// creditCardInput.addEventListener("input", (e) => {
+//   console.log(e);
+//   formData["cc"] = e.target.value;
+// });
+// veggieSelect.addEventListener("input", (e) => {
+//   formData["veggie"] = e.target.value;
+// });
+// termsChechbox.addEventListener("input", (e) => {
+//   formData["agreeToTerms"] = e.target.checked;
+// });
