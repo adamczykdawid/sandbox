@@ -44,6 +44,10 @@ const restaurant = {
       `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`
     );
   },
+  orderPizza: function (mainIngredient, ...otherIngredient) {
+    console.log(mainIngredient);
+    console.log(otherIngredient);
+  },
 };
 
 //practical usage
@@ -105,43 +109,84 @@ const restaurant = {
 // } = openingHours;
 // console.log(o, c);
 
-/////////////////SPREAD
-const arr = [7, 8, 9];
-const arrTwo = [1, 2, 3, ...arr];
+// /////////////////SPREAD
+// const arr = [7, 8, 9];
+// const arrTwo = [1, 2, 3, ...arr];
 
-console.log(arrTwo);
+// console.log(arrTwo);
 
-console.log(...arrTwo);
+// console.log(...arrTwo);
 
-const newMenu = [...restaurant.mainMenu, 'Gnocci'];
-console.log(newMenu);
+// const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+// console.log(newMenu);
 
-//copy array
+// //copy array
 
-const mainMenuCopy = [...restaurant.mainMenu];
+// const mainMenuCopy = [...restaurant.mainMenu];
 
-//join 2 arrays
+// //join 2 arrays
 
-const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
-console.log(...menu);
-console.log(menu);
+// const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// console.log(...menu);
+// console.log(menu);
 
-const ingredients = [
-  // prompt("Let's make a pasta! Ingredient 1?"),
-  // prompt('Ingredient 2?'),
-  // prompt('Ingredient 3?'),
+// const ingredients = [
+//   // prompt("Let's make a pasta! Ingredient 1?"),
+//   // prompt('Ingredient 2?'),
+//   // prompt('Ingredient 3?'),
+// ];
+
+// console.log(ingredients);
+
+// restaurant.orderPasta(...ingredients);
+
+// //objects
+
+// const newRestaurant = { foundedIn: 1946, ...restaurant, founder: 'Guiseppe' };
+// console.log(newRestaurant);
+
+// const restaurantCopy = { ...restaurant };
+// restaurantCopy.name = 'Ristorante Roma';
+// console.log(restaurantCopy.name);
+// console.log(restaurant.name);
+
+/////////////////////////////////////////////////////////rest
+
+//SPREAD because on the right hand side of =
+const arr = [1, 2, ...[3, 4]];
+
+//REST because on the left hand side of =
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(arr, a, b, others);
+
+const [pizza, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
 ];
 
-console.log(ingredients);
+console.log(pizza, otherFood);
 
-restaurant.orderPasta(...ingredients);
+//Objects
 
-//objects
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
 
-const newRestaurant = { foundedIn: 1946, ...restaurant, founder: 'Guiseppe' };
-console.log(newRestaurant);
+//functions
+const add = function (...numbers) {
+  let sum = 0;
+  for (let num of numbers) {
+    sum += num;
+  }
+  console.log(sum);
+  return sum;
+};
 
-const restaurantCopy = { ...restaurant };
-restaurantCopy.name = 'Ristorante Roma';
-console.log(restaurantCopy.name);
-console.log(restaurant.name);
+add(2, 3);
+add(2, 3, 4, 5, 56, 67);
+add(2, 3, 4, 5, 56, 67, 54, 6, 2, 5, 6, 7, 8, 9);
+
+const x = [23, 5, 7];
+
+add(...x);
+
+restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
