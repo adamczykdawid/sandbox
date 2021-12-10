@@ -50,6 +50,33 @@ const restaurant = {
   },
 };
 
+////////////////////////////LOGICAL ASSIGNMENT OPERATORS
+// const rest1 = {
+//   name: 'Capri',
+//   numGuests: 20,
+// };
+
+// const rest2 = {
+//   name: 'La Piazza',
+//   owner: 'Giovanni Rossi',
+// };
+
+// ////////////////OR ASSIGNMENT OPERATOR
+// // rest1.numGuests = rest1.numGuests || 10;
+// // rest2.numGuests = rest2.numGuests || 10;
+
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
+
+// ////////////////LOGICAL NULLISH ASSIGNMENT OPERATOR ??= (null or undefined)
+
+// rest2.owner = rest2.owner && '<ANONYMOUS>';
+// rest2.owner = rest1.owner && '<ANONYMOUS>';
+
+// ///////////////AND ASSIGNMENT OPERATOR &&=
+
+// console.log(rest2, rest1);
+
 //practical usage
 // restaurant.objectDelivery({
 //   time: '22:30',
@@ -153,40 +180,60 @@ const restaurant = {
 /////////////////////////////////////////////////////////rest
 
 //SPREAD because on the right hand side of =
-const arr = [1, 2, ...[3, 4]];
+// const arr = [1, 2, ...[3, 4]];
 
-//REST because on the left hand side of =
-const [a, b, ...others] = [1, 2, 3, 4, 5];
-console.log(arr, a, b, others);
+// //REST because on the left hand side of =
+// const [a, b, ...others] = [1, 2, 3, 4, 5];
+// console.log(arr, a, b, others);
 
-const [pizza, ...otherFood] = [
-  ...restaurant.mainMenu,
-  ...restaurant.starterMenu,
-];
+// const [pizza, ...otherFood] = [
+//   ...restaurant.mainMenu,
+//   ...restaurant.starterMenu,
+// ];
 
-console.log(pizza, otherFood);
+// console.log(pizza, otherFood);
 
-//Objects
+// //Objects
 
-const { sat, ...weekdays } = restaurant.openingHours;
-console.log(weekdays);
+// const { sat, ...weekdays } = restaurant.openingHours;
+// console.log(weekdays);
 
-//functions
-const add = function (...numbers) {
-  let sum = 0;
-  for (let num of numbers) {
-    sum += num;
-  }
-  console.log(sum);
-  return sum;
-};
+// //functions
+// const add = function (...numbers) {
+//   let sum = 0;
+//   for (let num of numbers) {
+//     sum += num;
+//   }
+//   console.log(sum);
+//   return sum;
+// };
 
-add(2, 3);
-add(2, 3, 4, 5, 56, 67);
-add(2, 3, 4, 5, 56, 67, 54, 6, 2, 5, 6, 7, 8, 9);
+// add(2, 3);
+// add(2, 3, 4, 5, 56, 67);
+// add(2, 3, 4, 5, 56, 67, 54, 6, 2, 5, 6, 7, 8, 9);
 
-const x = [23, 5, 7];
+// const x = [23, 5, 7];
 
-add(...x);
+// add(...x);
 
-restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
+// restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
+
+// ////////////////////short circuting
+// //OR
+// restaurant.numGuests = 23;
+// const guest1 = restaurant.numGuests ? restaurant.numGuests : 10;
+// console.log(guest1);
+
+// const guests2 = restaurant.numGuests || 10;
+// console.log(guests2);
+
+// //AND
+// if (restaurant.orderPizza) {
+//   restaurant.orderPizza('mushrooms', 'spinach');
+// }
+
+// restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+
+////////nullish values
+// const guestCorrect = restaurant.numGuests ?? 10;
+// console.log(guestCorrect);
