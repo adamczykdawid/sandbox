@@ -177,67 +177,67 @@
 // planesInLine(3);
 // planesInLine(12);
 
-// ///////////////////////////////////////
-// // Working With Strings - Part 2
+///////////////////////////////////////
+// Working With Strings - Part 2
 
-// const airline = 'TAP Air Portugal';
+const airline = 'TAP Air Portugal';
 
-// console.log(airline.toLowerCase());
-// console.log(airline.toUpperCase());
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
 
-// // Fix capitalization in name
-// const passenger = 'jOnAS'; // Jonas
-// const passengerLower = passenger.toLowerCase();
-// const passengerCorrect =
-//   passengerLower[0].toUpperCase() + passengerLower.slice(1);
-// console.log(passengerCorrect);
+// Fix capitalization in name
+const passenger = 'jOnAS'; // Jonas
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
 
-// // Comparing emails
-// const email = 'hello@jonas.io';
-// const loginEmail = '  Hello@Jonas.Io \n';
+// Comparing emails
+const email = 'hello@jonas.io';
+const loginEmail = '  Hello@Jonas.Io \n';
 
-// // const lowerEmail = loginEmail.toLowerCase();
-// // const trimmedEmail = lowerEmail.trim();
-// const normalizedEmail = loginEmail.toLowerCase().trim();
-// console.log(normalizedEmail);
-// console.log(email === normalizedEmail);
+// const lowerEmail = loginEmail.toLowerCase();
+// const trimmedEmail = lowerEmail.trim();
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+console.log(email === normalizedEmail);
 
-// // replacing
-// const priceGB = '288,97£';
-// const priceUS = priceGB.replace('£', '$').replace(',', '.');
-// console.log(priceUS);
+// replacing
+const priceGB = '288,97£';
+const priceUS = priceGB.replace('£', '$').replace(',', '.');
+console.log(priceUS);
 
-// const announcement =
-//   'All passengers come to boarding door 23. Boarding door 23!';
+const announcement =
+  'All passengers come to boarding door 23. Boarding door 23!';
 
-// console.log(announcement.replace('door', 'gate'));
-// // console.log(announcement.replaceAll('door', 'gate'));
-// console.log(announcement.replace(/door/g, 'gate'));
+console.log(announcement.replace('door', 'gate'));
+// console.log(announcement.replaceAll('door', 'gate'));
+console.log(announcement.replace(/door/g, 'gate'));
 
-// // Booleans
-// const plane = 'Airbus A320neo';
-// console.log(plane.includes('A320'));
-// console.log(plane.includes('Boeing'));
-// console.log(plane.startsWith('Airb'));
+// Booleans
+const plane = 'Airbus A320neo';
+console.log(plane.includes('A320'));
+console.log(plane.includes('Boeing'));
+console.log(plane.startsWith('Airb'));
 
-// if (plane.startsWith('Airbus') && plane.endsWith('neo')) {
-//   console.log('Part of the NEW ARirbus family');
-// }
+if (plane.startsWith('Airbus') && plane.endsWith('neo')) {
+  console.log('Part of the NEW ARirbus family');
+}
 
-// // Practice exercise
-// const checkBaggage = function (items) {
-//   const baggage = items.toLowerCase();
+// Practice exercise
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
 
-//   if (baggage.includes('knife') || baggage.includes('gun')) {
-//     console.log('You are NOT allowed on board');
-//   } else {
-//     console.log('Welcome aboard!');
-//   }
-// };
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You are NOT allowed on board');
+  } else {
+    console.log('Welcome aboard!');
+  }
+};
 
-// checkBaggage('I have a laptop, some Food and a pocket Knife');
-// checkBaggage('Socks and camera');
-// checkBaggage('Got some snacks and a gun for protection');
+checkBaggage('I have a laptop, some Food and a pocket Knife');
+checkBaggage('Socks and camera');
+checkBaggage('Got some snacks and a gun for protection');
 
 // ///////////////////////////////////////
 // // Working With Strings - Part 1
@@ -297,46 +297,46 @@
 // GOOD LUCK 😀
 // */
 
-const gameEvents = new Map([
-  [17, '⚽️ GOAL'],
-  [36, '🔁 Substitution'],
-  [47, '⚽️ GOAL'],
-  [61, '🔁 Substitution'],
-  [64, '🔶 Yellow card'],
-  [69, '🔴 Red card'],
-  [70, '🔁 Substitution'],
-  [72, '🔁 Substitution'],
-  [76, '⚽️ GOAL'],
-  [80, '⚽️ GOAL'],
-  [92, '🔶 Yellow card'],
-]);
+// const gameEvents = new Map([
+//   [17, '⚽️ GOAL'],
+//   [36, '🔁 Substitution'],
+//   [47, '⚽️ GOAL'],
+//   [61, '🔁 Substitution'],
+//   [64, '🔶 Yellow card'],
+//   [69, '🔴 Red card'],
+//   [70, '🔁 Substitution'],
+//   [72, '🔁 Substitution'],
+//   [76, '⚽️ GOAL'],
+//   [80, '⚽️ GOAL'],
+//   [92, '🔶 Yellow card'],
+// ]);
 
-///////CODCHALL3 ---1
+// ///////CODCHALL3 ---1
 
-const eventsPre = [gameEvents.values()];
-console.log(eventsPre);
-const events = [new Set(...eventsPre)];
-console.log(events);
+// const eventsPre = [gameEvents.values()];
+// console.log(eventsPre);
+// const events = [new Set(...eventsPre)];
+// console.log(events);
 
-///////CODCHALL3 ---2
+// ///////CODCHALL3 ---2
 
-gameEvents.delete(64);
-console.log(gameEvents);
+// gameEvents.delete(64);
+// console.log(gameEvents);
 
-///////CODCHALL3 ---3
-console.log(
-  `An event happened on average every ${90 / gameEvents.size} minutes`
-);
+// ///////CODCHALL3 ---3
+// console.log(
+//   `An event happened on average every ${90 / gameEvents.size} minutes`
+// );
 
-///////CODCHALL3 ---4
+// ///////CODCHALL3 ---4
 
-for (let [minute, event] of gameEvents) {
-  if (minute <= 45) {
-    console.log(`[FIRST HALF] ${minute}: ${event}`);
-  } else {
-    console.log(`[SECOND HALF] ${minute}: ${event}`);
-  }
-}
+// for (let [minute, event] of gameEvents) {
+//   if (minute <= 45) {
+//     console.log(`[FIRST HALF] ${minute}: ${event}`);
+//   } else {
+//     console.log(`[SECOND HALF] ${minute}: ${event}`);
+//   }
+// }
 
 // /*
 // // 1.
