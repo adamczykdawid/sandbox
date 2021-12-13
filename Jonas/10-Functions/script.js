@@ -214,45 +214,69 @@ BONUS TEST DATA 2: [1, 5, 3, 9, 6, 1]
 GOOD LUCK 😀
 */
 
-const poll = {
-  question: 'What is your favourite programming language?',
-  options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
-  // This generates [0, 0, 0, 0]. More in the next section 😃
-  answers: new Array(4).fill(0),
-  registerNewAnswer() {
-    const inputNum = prompt(
-      `${this.question}\n ${this.options.join('\n')} \n Write option number:`
-    );
+// const poll = {
+//   question: 'What is your favourite programming language?',
+//   options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
+//   // This generates [0, 0, 0, 0]. More in the next section 😃
+//   answers: new Array(4).fill(0),
+//   registerNewAnswer() {
+//     const inputNum = prompt(
+//       `${this.question}\n ${this.options.join('\n')} \n Write option number:`
+//     );
 
-    const inputNumber = parseInt(inputNum);
-    for (const [i, el] of this.answers.entries()) {
-      if (inputNumber === i) {
-        this.answers[i]++;
-      } else if (inputNumber > 3 || inputNumber < 0) {
-        alert('what the..');
-      }
-    }
-    //OR JONAS METHOD WITH SHORT CIRCUITING ETC
-    //typeof answer === 'number' && answer < this.answers.length && this.answers[answer]++;
+//     const inputNumber = parseInt(inputNum);
+//     for (const [i, el] of this.answers.entries()) {
+//       if (inputNumber === i) {
+//         this.answers[i]++;
+//       } else if (inputNumber > 3 || inputNumber < 0) {
+//         alert('what the..');
+//       }
+//     }
+//     //OR JONAS METHOD WITH SHORT CIRCUITING ETC
+//     //typeof answer === 'number' && answer < this.answers.length && this.answers[answer]++;
 
-    this.displayResults();
-    this.displayResults('string');
-  },
-  displayResults(type = 'array') {
-    if (type === 'array') {
-      console.log(this.answers);
-    } else if (type === 'string') {
-      const result = `Poll results are ${this.answers.join(',')}`;
-      console.log(result);
-      return result;
-    }
-  },
+//     this.displayResults();
+//     this.displayResults('string');
+//   },
+//   displayResults(type = 'array') {
+//     if (type === 'array') {
+//       console.log(this.answers);
+//     } else if (type === 'string') {
+//       const result = `Poll results are ${this.answers.join(',')}`;
+//       console.log(result);
+//       return result;
+//     }
+//   },
+// };
+
+// document
+//   .querySelector('.poll')
+//   .addEventListener('click', poll.registerNewAnswer.bind(poll));
+
+// poll.displayResults.call({ answers: [5, 2, 3] }, 'string');
+// // [5, 2, 3]
+// // [1, 5, 3, 9, 6, 1]
+
+///////////////////////////////////////
+// Immediately Invoked Function Expressions (IIFE)
+const runOnce = function () {
+  console.log('This will never run again');
 };
+runOnce();
 
-document
-  .querySelector('.poll')
-  .addEventListener('click', poll.registerNewAnswer.bind(poll));
+// IIFE
+(function () {
+  console.log('This will never run again');
+  const isPrivate = 23;
+})();
 
-poll.displayResults.call({ answers: [5, 2, 3] }, 'string');
-// [5, 2, 3]
-// [1, 5, 3, 9, 6, 1]
+// console.log(isPrivate);
+
+(() => console.log('This will ALSO never run again'))();
+
+{
+  const isPrivate = 23;
+  var notPrivate = 46;
+}
+// console.log(isPrivate);
+console.log(notPrivate);
