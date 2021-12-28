@@ -74,5 +74,16 @@
 // const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
-const dummyArr = [23, 11, 64];
-console.log(dummyArr.at(0));
+// const dummyArr = [23, 11, 64];
+// console.log(dummyArr.at(0));
+/////////////////////////////////////////////////
+//////forEach on maps
+const currencies = new Map([
+  ['USD', 'United States dollar'],
+  ['EUR', 'Euro'],
+  ['GBP', 'Pound sterling'],
+]);
+
+currencies.forEach(function (value, key, map) {
+  console.log(`${key}:${value}, ${map}`);
+});
